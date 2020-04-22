@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexey Kupreychenko / EversoberArtist</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navigation">
+            <ul class="nav-list  js-nav-list">
+                <li class="nav-list__item">
+                    <a href="#" class="nav-list__link nav-list__link--left js-link-left"></a>
+                </li>
+                <li class="nav-list__item">
+                    <a href="#" class="nav-list__link nav-list__link--right js-link-right"></a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+</body>
+
+<script>
+
+    const linkLeft = document.querySelector('.js-link-left');
+    const linkRight = document.querySelector('.js-link-right');
+    const navList = document.querySelector('.js-nav-list');
+
+    if (document.images) {
+        const img1 = new Image();
+        const img2 = new Image();
+        const img3 = new Image();
+
+        img1.src = "./img/background-left-active.jpg";
+        img2.src = "./img/background-right-active.jpg";
+        img3.src = "./img/background.jpg";
+
+        linkLeft.addEventListener('mouseover', () => {
+            navList.style.backgroundImage = `url(${img1.src})`;
+            // navList.style.backgroundPosition = "-1230px -10px";
+            // navList.classList.add('animated', 'fadeInRight')
+        })
+        linkLeft.addEventListener('mouseout', () => {
+            navList.style.backgroundImage = `url(${img3.src})`;
+            // navList.style.backgroundPosition = "-1230px -10px";
+            // navList.classList.add('animated', 'fadeInRight')
+        })
+
+        linkRight.addEventListener('mouseover', () => {
+            // navList.style.backgroundPosition = "-10px -760px";
+            navList.style.backgroundImage = `url(${img2.src})`;
+        })
+    }
+</script>
+
+</html>
